@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw scrapings archive
+/downloaded_assets/
+media_metadata.json
+pages_raw.json
+all_image_urls.json
+downloader.py
+download_originals.py

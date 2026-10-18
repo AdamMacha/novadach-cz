@@ -60,7 +60,7 @@ export default function ReferencesGallery({ initialFilter = 'all', limit }: Prop
             onClick={() => setActiveModalProject(project)}
           >
             {/* Image box */}
-            <div className={styles.imageBox}>
+            <div className={styles.imageBox} style={{ position: 'relative' }}>
               <Image
                 src={project.image}
                 alt={project.title}
@@ -126,7 +126,7 @@ export default function ReferencesGallery({ initialFilter = 'all', limit }: Prop
             </button>
 
             <div className={styles.modalGrid}>
-              <div className={styles.modalImageBox}>
+              <div className={styles.modalImageBox} style={{ position: 'relative' }}>
                 <Image
                   src={activeModalProject.image}
                   alt={activeModalProject.title}

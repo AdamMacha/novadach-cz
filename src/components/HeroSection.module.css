@@ -384,7 +384,7 @@
 
 @media (max-width: 992px) {
   .heroTitle {
-    font-size: 2.75rem;
+    font-size: clamp(2.2rem, 5.5vw, 3rem);
   }
   .bottomBar {
     flex-direction: column;
@@ -401,23 +401,65 @@
   }
 }
 
+@media (max-width: 768px) {
+  .heroWrapper {
+    min-height: auto;
+    padding: 3rem 0 2rem 0;
+  }
+  .contentContainer {
+    min-height: auto;
+    padding: 0 1.25rem;
+  }
+  .bottomBar {
+    margin-top: 3rem;
+  }
+}
+
 @media (max-width: 640px) {
   .heroTitle {
-    font-size: 2.2rem;
+    font-size: clamp(1.85rem, 7.5vw, 2.4rem);
+    line-height: 1.15;
+    margin-bottom: 1.1rem;
   }
   .heroLead {
-    font-size: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
   }
   .ctaRow {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
   }
   .primaryCta,
   .secondaryCta {
     width: 100%;
     justify-content: center;
+    padding: 0.85rem 1.25rem;
   }
   .projectTabs {
     display: none;
+  }
+  .bottomBar {
+    margin-top: 2.25rem;
+    padding-top: 1.25rem;
+  }
+  .quickMetrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    text-align: center;
+    width: 100%;
+  }
+  .metric {
+    align-items: center;
+  }
+  .metricVal {
+    font-size: clamp(1.3rem, 5vw, 1.65rem);
+    margin-bottom: 0.15rem;
+  }
+  .metricLbl {
+    font-size: 0.68rem;
+    line-height: 1.25;
   }
 }

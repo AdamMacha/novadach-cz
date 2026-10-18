@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import ReferencesGallery from '@/components/ReferencesGallery';
 import Link from 'next/link';
+import styles from './referencie.module.css';
 import { ArrowRight, Building, Award, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ReferenciePage() {
   return (
-    <div style={{ padding: '3.5rem 0 6rem 0' }}>
+    <div className={styles.pageWrapper}>
       <div className="container">
         {/* Header */}
         <div className="section-header" style={{ marginBottom: '3.5rem' }}>
@@ -28,13 +29,13 @@ export default function ReferenciePage() {
         <ReferencesGallery />
 
         {/* Summary Trust Box */}
-        <div style={{ marginTop: '5rem', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-lg)', padding: '3rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '3rem', alignItems: 'center' }}>
+        <div className={styles.trustBox}>
+          <div className={styles.trustGrid}>
             <div>
               <span style={{ color: 'var(--accent-amber)', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase' }}>
                 Český trh i mezinárodní zázemí
               </span>
-              <h3 style={{ fontSize: '1.8rem', color: 'var(--text-primary)', margin: '0.5rem 0 1rem 0' }}>
+              <h3 style={{ fontSize: 'clamp(1.4rem, 4vw, 1.8rem)', color: 'var(--text-primary)', margin: '0.5rem 0 1rem 0' }}>
                 Hledáte spolehlivého subdodavatele pro váš projekt?
               </h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
@@ -51,7 +52,7 @@ export default function ReferenciePage() {
               </div>
             </div>
 
-            <div style={{ background: '#0e141c', padding: '2rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
+            <div className={styles.trustBenefitsCard}>
               <h4 style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>Co získáte spoluprací s námi:</h4>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>

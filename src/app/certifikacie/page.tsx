@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import CertificatesSection from '@/components/CertificatesSection';
 import Link from 'next/link';
+import styles from './certifikacie.module.css';
 import { ShieldCheck, Award, FileText, CheckCircle, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function CertifikaciePage() {
   return (
-    <div style={{ padding: '3.5rem 0 6rem 0' }}>
+    <div className={styles.pageWrapper}>
       <div className="container">
         {/* Header */}
         <div className="section-header" style={{ marginBottom: '3.5rem' }}>
@@ -28,8 +29,8 @@ export default function CertifikaciePage() {
         <CertificatesSection />
 
         {/* Detailed Explanation of Standards */}
-        <div style={{ marginTop: '5rem', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
-          <div className="glass-card" style={{ padding: '2rem' }}>
+        <div className={styles.standardsGrid}>
+          <div className={`glass-card ${styles.standardCard}`}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1rem', color: 'var(--accent-amber)' }}>
               <ShieldCheck size={24} />
               <h3 style={{ fontSize: '1.25rem', color: 'var(--text-primary)' }}>ISO 9001:2015</h3>
@@ -40,7 +41,7 @@ export default function CertifikaciePage() {
             </p>
           </div>
 
-          <div className="glass-card" style={{ padding: '2rem' }}>
+          <div className={`glass-card ${styles.standardCard}`}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1rem', color: 'var(--accent-amber)' }}>
               <ShieldCheck size={24} />
               <h3 style={{ fontSize: '1.25rem', color: 'var(--text-primary)' }}>ISO 14001:2015</h3>
@@ -51,7 +52,7 @@ export default function CertifikaciePage() {
             </p>
           </div>
 
-          <div className="glass-card" style={{ padding: '2rem' }}>
+          <div className={`glass-card ${styles.standardCard}`}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1rem', color: 'var(--accent-amber)' }}>
               <ShieldCheck size={24} />
               <h3 style={{ fontSize: '1.25rem', color: 'var(--text-primary)' }}>ISO 45001:2018</h3>
@@ -64,7 +65,7 @@ export default function CertifikaciePage() {
         </div>
 
         {/* CTA Box */}
-        <div style={{ marginTop: '4rem', textAlign: 'center' }}>
+        <div className={styles.ctaBox}>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '1.05rem' }}>
             Požadujete do tendru ověřenou kopii certifikátů nebo doložení technických listů konkrétních materiálů?
           </p>

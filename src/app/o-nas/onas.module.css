@@ -1,0 +1,58 @@
+/* ==========================================================================
+   O nás Page Styles
+   ========================================================================== */
+
+.pageWrapper {
+  padding: 3.5rem 0 6rem 0;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.storyImageCard {
+  position: relative;
+  height: 420px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-lg);
+}
+
+.storyActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+  .storyImageCard {
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageWrapper {
+    padding: 2rem 0 4rem 0;
+  }
+  .storyActions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .storyActions a {
+    width: 100%;
+    justify-content: center;
+  }
+  .storyImageCard {
+    height: 280px;
+  }
+}

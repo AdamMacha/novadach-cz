@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import TeamSection from '@/components/TeamSection';
+import styles from './onas.module.css';
 import { 
   Building2, 
   Award, 
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function ONasPage() {
   return (
-    <div style={{ padding: '3.5rem 0 6rem 0' }}>
+    <div className={styles.pageWrapper}>
       <div className="container">
         {/* Page Header */}
         <div className="section-header">
@@ -35,15 +36,15 @@ export default function ONasPage() {
         </div>
 
         {/* Story Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '3.5rem', alignItems: 'center', marginBottom: '5rem' }}>
+        <div className={styles.storyGrid}>
           <div>
-            <h2 style={{ fontSize: '2.1rem', marginBottom: '1.25rem', color: 'var(--text-primary)' }}>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 4vw, 2.1rem)', marginBottom: '1.25rem', color: 'var(--text-primary)' }}>
               Od roku 1993 specialistou na komplexní pláště budov
             </h2>
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.25rem' }}>
+            <p style={{ fontSize: '1.02rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.25rem' }}>
               Společnost <strong>NOVADACH s.r.o.</strong> je realizační stavební společnost s tradicí sahající do roku 1993, kdy začala působit sesterská firma NOVAGLASS s.r.o. V roce 2002 byla založena společnost NOVADACH specializující se na náročné střešní konstrukce, skládané fasády a speciální izolace inženýrských děl.
             </p>
-            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '1.02rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               Cílem naší společnosti je poskytnout investorovi <strong>komplexní servis na klíč</strong>: od úvodního návrhu technického řešení přes optimalizaci nákladů a výběr vhodných materiálů až po samotnou montáž a následný záruční servis.
             </p>
 
@@ -56,7 +57,7 @@ export default function ONasPage() {
               </p>
             </div>
 
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <div className={styles.storyActions}>
               <a 
                 href="https://www.novadach.sk" 
                 target="_blank" 
@@ -73,14 +74,7 @@ export default function ONasPage() {
           </div>
 
           <div style={{ position: 'relative' }}>
-            <div style={{ 
-              position: 'relative', 
-              height: '420px', 
-              borderRadius: 'var(--radius-lg)', 
-              overflow: 'hidden',
-              border: '1px solid var(--border-subtle)',
-              boxShadow: 'var(--shadow-lg)'
-            }}>
+            <div className={styles.storyImageCard}>
               <Image
                 src="/images/referencie/BTC-Pradiaren-Bratislava-2019-2021.jpg"
                 alt="Historie a moderní technologie NOVADACH"

@@ -209,3 +209,26 @@
     margin: 0 auto;
   }
 }
+
+@media (max-width: 768px) {
+  .zoomOverlay {
+    padding: 0.75rem;
+  }
+  .zoomModal {
+    padding: 1.25rem 0.5rem;
+    max-height: 92vh;
+  }
+  .introBox {
+    padding: 1.5rem 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .introTitle {
+    font-size: 1.35rem;
+  }
+  .certPreview {
+    height: 240px;
+  }
+  .cardContent {
+    padding: 1.25rem;
+  }
+}

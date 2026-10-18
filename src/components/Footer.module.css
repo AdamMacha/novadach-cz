@@ -66,17 +66,22 @@
 
 .footerLogo {
   display: inline-block;
-  background: #ffffff;
-  padding: 0.4rem 0.8rem;
-  border-radius: var(--radius-sm);
+  background: transparent;
+  padding: 0;
   margin-bottom: 1.25rem;
+  transition: opacity 0.2s ease;
+}
+
+.footerLogo:hover {
+  opacity: 0.9;
 }
 
 .logoImg {
-  height: auto;
-  max-height: 40px;
+  height: 38px;
+  max-height: 42px;
   width: auto;
   object-fit: contain;
+  display: block;
 }
 
 .aboutText {
@@ -219,12 +224,42 @@
   }
 }
 
+@media (max-width: 768px) {
+  .topCta {
+    padding: 2.5rem 0;
+  }
+  .topCtaHeading {
+    font-size: 1.5rem;
+  }
+  .mainFooter {
+    padding: 3rem 0 1.5rem 0;
+  }
+}
+
 @media (max-width: 640px) {
+  .topCtaInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .topCtaButtons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .topCtaButtons a {
+    width: 100%;
+    justify-content: center;
+  }
   .grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
   }
   .bottomBar {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.75rem;
   }
 }

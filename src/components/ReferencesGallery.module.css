@@ -373,15 +373,57 @@
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .modalOverlay {
+    padding: 0.75rem;
+  }
+  .modalContent {
+    max-height: 94vh;
   }
   .modalGrid {
     grid-template-columns: 1fr;
   }
   .modalImageBox {
-    height: 250px;
-    min-height: 250px;
+    height: 220px;
+    min-height: 220px;
   }
   .modalInfoBox {
-    padding: 1.5rem;
+    padding: 1.25rem 1rem;
+  }
+  .modalTitle {
+    font-size: 1.35rem;
+  }
+  .modalSubtitle {
+    font-size: 0.92rem;
+    margin-bottom: 1rem;
+  }
+  .metaRow {
+    gap: 1.25rem;
+  }
+  .modalCta a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .filterBar {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0.25rem 0.25rem 0.75rem 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-bottom: 1.75rem;
+    gap: 0.5rem;
+  }
+  .filterBar::-webkit-scrollbar {
+    display: none;
+  }
+  .filterBtn {
+    flex-shrink: 0;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.82rem;
   }
 }

@@ -45,10 +45,10 @@ export default function Footer() {
             <div className={styles.colAbout}>
               <Link href="/" className={styles.footerLogo}>
                 <Image
-                  src="/images/logos/cropped-novadach_logo_rgb-wback-1.png"
+                  src="/images/logos/novadach-logo-sticky-retina.png"
                   alt="NOVADACH"
-                  width={180}
-                  height={50}
+                  width={170}
+                  height={63}
                   className={styles.logoImg}
                 />
               </Link>

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { servicesData } from '@/data/servicesData';
 import { referencesData } from '@/data/referencesData';
+import styles from './sluzby.module.css';
 import { 
   ShieldCheck, 
   Building2, 
@@ -42,10 +43,10 @@ export default function SluzbyPage() {
   };
 
   return (
-    <div style={{ padding: '3.5rem 0 6rem 0' }}>
+    <div className={styles.pageWrapper}>
       <div className="container">
         {/* Page Header */}
-        <div className="section-header" style={{ marginBottom: '4rem' }}>
+        <div className="section-header" style={{ marginBottom: '3.5rem' }}>
           <span className="section-tag">Technologický katalog</span>
           <h1 className="section-title">
             Komplexní řešení pro <span className="text-gradient">střechy, fasády a izolace</span>
@@ -56,7 +57,7 @@ export default function SluzbyPage() {
         </div>
 
         {/* Detailed Services Listing */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem' }}>
+        <div className={styles.servicesList}>
           {servicesData.map((service, index) => {
             const relatedProjects = referencesData.filter((r) => service.referenceIds.includes(r.id));
 
@@ -64,29 +65,18 @@ export default function SluzbyPage() {
               <div 
                 key={service.id} 
                 id={service.id}
-                className="glass-card" 
-                style={{ padding: '3rem', position: 'relative' }}
+                className={`glass-card ${styles.serviceCard}`} 
               >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-                    <div style={{ 
-                      width: '64px', 
-                      height: '64px', 
-                      borderRadius: 'var(--radius-sm)', 
-                      background: 'var(--accent-amber-light)', 
-                      border: '1px solid var(--accent-amber-border)', 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      justifyContent: 'center',
-                      color: 'var(--accent-amber)'
-                    }}>
+                <div className={styles.cardTopRow}>
+                  <div className={styles.cardHeaderInfo}>
+                    <div className={styles.iconBox}>
                       {getIcon(service.id)}
                     </div>
                     <div>
                       <span style={{ fontSize: '0.8rem', color: 'var(--accent-amber)', fontWeight: 700, textTransform: 'uppercase' }}>
                         OBOROVÁ SPECIALIZACE 0{index + 1}
                       </span>
-                      <h2 style={{ fontSize: '2rem', color: 'var(--text-primary)' }}>{service.title}</h2>
+                      <h2 className={styles.cardTitle}>{service.title}</h2>
                     </div>
                   </div>
 
@@ -96,13 +86,13 @@ export default function SluzbyPage() {
                   </Link>
                 </div>
 
-                <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '2rem' }}>
+                <p className={styles.cardDesc}>
                   {service.longDesc}
                 </p>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2.5rem' }}>
+                <div className={styles.featuresBenefitsGrid}>
                   {/* Features Column */}
-                  <div style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '1.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
+                  <div className={styles.detailColumn}>
                     <h4 style={{ fontSize: '1.05rem', color: 'var(--text-primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <Check size={18} style={{ color: 'var(--accent-amber)' }} />
                       Rozsah realizovaných prací:
@@ -118,7 +108,7 @@ export default function SluzbyPage() {
                   </div>
 
                   {/* Benefits Column */}
-                  <div style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '1.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
+                  <div className={styles.detailColumn}>
                     <h4 style={{ fontSize: '1.05rem', color: 'var(--text-primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <Sparkles size={18} style={{ color: 'var(--accent-amber)' }} />
                       Výhody pro investora a garance:
@@ -185,9 +175,9 @@ export default function SluzbyPage() {
         </div>
 
         {/* Bottom CTA */}
-        <div style={{ marginTop: '4.5rem', textAlign: 'center' }}>
-          <div className="glass-card" style={{ padding: '3rem', maxWidth: '800px', margin: '0 auto' }}>
-            <h3 style={{ fontSize: '1.8rem', marginBottom: '0.75rem' }}>Potřebujete individuální technické řešení?</h3>
+        <div style={{ marginTop: '4rem', textAlign: 'center' }}>
+          <div className={`glass-card ${styles.bottomCtaCard}`}>
+            <h3 style={{ fontSize: 'clamp(1.35rem, 4vw, 1.8rem)', marginBottom: '0.75rem' }}>Potřebujete individuální technické řešení?</h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '1.75rem' }}>
               Náš tým přípravy staveb s vámi projde projektovou dokumentaci a navrhne nejvhodnější souvrství s ohledem na technické normy a rozpočet.
             </p>

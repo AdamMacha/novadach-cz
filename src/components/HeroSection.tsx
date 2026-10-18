@@ -81,6 +81,7 @@ export default function HeroSection() {
           <div
             key={s.id}
             className={`${styles.bgSlide} ${idx === activeIdx ? styles.bgSlideActive : ''}`}
+            style={{ position: 'absolute', inset: 0 }}
           >
             <Image
               src={s.image}

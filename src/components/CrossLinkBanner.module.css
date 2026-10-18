@@ -100,11 +100,42 @@
 }
 
 @media (max-width: 768px) {
-  .inner {
-    justify-content: center;
-    text-align: center;
+  .banner {
+    padding: 0.35rem 0;
   }
+  .inner {
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .text {
+    display: none;
+  }
+  .tag {
+    font-size: 0.68rem;
+    padding: 0.1rem 0.35rem;
+  }
+  .right {
+    gap: 0.5rem;
+  }
+  .links {
+    gap: 0.4rem;
+  }
+  .activeRegion,
+  .skLink {
+    font-size: 0.74rem;
+    padding: 0.15rem 0.4rem;
+  }
+}
+
+@media (max-width: 420px) {
   .left {
-    justify-content: center;
+    gap: 0.4rem;
+  }
+  .activeRegion span:not(.flag) {
+    display: inline;
+  }
+  .skLink span:not(.flag) {
+    font-size: 0.72rem;
   }
 }

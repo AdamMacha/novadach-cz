@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
+import styles from './kontakt.module.css';
 import { 
   Phone, 
   Mail, 
@@ -20,10 +21,10 @@ export const metadata: Metadata = {
 
 export default function KontaktPage() {
   return (
-    <div style={{ padding: '3.5rem 0 6rem 0' }}>
+    <div className={styles.pageWrapper}>
       <div className="container">
         {/* Header */}
-        <div className="section-header" style={{ marginBottom: '4rem' }}>
+        <div className="section-header" style={{ marginBottom: '3.5rem' }}>
           <span className="section-tag">Spojte se s námi</span>
           <h1 className="section-title">
             Kontaktujte <span className="text-gradient">NOVADACH</span>
@@ -33,11 +34,11 @@ export default function KontaktPage() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.25fr', gap: '3.5rem', alignItems: 'flex-start' }}>
+        <div className={styles.kontaktGrid}>
           {/* Left: Contact Info */}
           <div>
             {/* CZ Representative Card */}
-            <div className="glass-card" style={{ padding: '2rem', marginBottom: '1.5rem', borderLeft: '4px solid #38bdf8' }}>
+            <div className={`glass-card ${styles.infoCard}`} style={{ borderLeft: '4px solid #38bdf8' }}>
               <span style={{ fontSize: '0.78rem', color: '#38bdf8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.4rem' }}>
                 🇨🇿 Zastoupení pro Českou republiku
               </span>
@@ -61,7 +62,7 @@ export default function KontaktPage() {
             </div>
 
             {/* Slovak Headquarters Card */}
-            <div className="glass-card" style={{ padding: '2rem', marginBottom: '1.5rem' }}>
+            <div className={`glass-card ${styles.infoCard}`}>
               <span style={{ fontSize: '0.78rem', color: 'var(--accent-amber)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.4rem' }}>
                 🇸🇰 Centrála společnosti (Slovensko)
               </span>
@@ -96,7 +97,7 @@ export default function KontaktPage() {
             </div>
 
             {/* Direct Commercial Contacts */}
-            <div className="glass-card" style={{ padding: '2rem' }}>
+            <div className={`glass-card ${styles.infoCard}`}>
               <h3 style={{ fontSize: '1.2rem', color: 'var(--text-primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <UserCheck size={18} style={{ color: 'var(--accent-amber)' }} />
                 <span>Přímé kontakty na vedení obchodu</span>

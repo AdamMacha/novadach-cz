@@ -39,8 +39,13 @@
   padding: 0.85rem 1rem;
   color: var(--text-primary);
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 16px; /* Prevents unwanted iOS Safari viewport auto-zoom */
   transition: var(--transition-fast);
+}
+
+.input,
+.select {
+  min-height: 48px;
 }
 
 .input:focus,
@@ -76,9 +81,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   gap: 0.4rem;
   cursor: pointer;
+  min-height: 90px;
   transition: var(--transition-fast);
 }
 
@@ -125,6 +132,7 @@
   width: 100%;
   padding: 1rem;
   font-size: 1.05rem;
+  min-height: 50px;
   margin-top: 0.5rem;
 }
 
@@ -170,10 +178,22 @@
 
 @media (max-width: 768px) {
   .wrapper {
-    padding: 1.75rem;
+    padding: 1.5rem;
   }
   .row {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 1.25rem 1rem;
+  }
+  .form {
+    gap: 1.15rem;
+  }
+  .submitBtn {
+    font-size: 0.98rem;
   }
 }

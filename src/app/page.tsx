@@ -198,7 +198,7 @@ export default function Home() {
       <section className="section" id="poptavka">
         <div className="container">
           <div className={styles.inquiryGrid}>
-            <div>
+            <div className={styles.inquiryInfoCol}>
               <span className="section-tag">Poptávka a kalkulace do tendru</span>
               <h2 className="section-title" style={{ marginBottom: '1.25rem' }}>
                 Připravujete stavbu nebo rekonstrukci střechy?
@@ -254,7 +254,7 @@ export default function Home() {
             </div>
 
             {/* Right: Contact Form */}
-            <div>
+            <div className={styles.inquiryFormCol}>
               <ContactForm />
             </div>
           </div>

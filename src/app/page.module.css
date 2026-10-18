@@ -133,6 +133,16 @@
   grid-template-columns: 1fr 1.3fr;
   gap: 4rem;
   align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.inquiryInfoCol,
+.inquiryFormCol {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .contactCardsList {

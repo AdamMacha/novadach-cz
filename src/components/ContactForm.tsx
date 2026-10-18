@@ -178,7 +178,7 @@ export default function ContactForm({ prefilledSubject }: { prefilledSubject?: s
           </div>
 
           <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-            <span>Odeslat nezávaznou poptávku do tendru</span>
+            <span>Odeslat nezávaznou poptávku</span>
             <Send size={16} />
           </button>
 

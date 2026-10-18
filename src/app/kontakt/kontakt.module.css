@@ -11,6 +11,16 @@
   grid-template-columns: 1fr 1.25fr;
   gap: 3.5rem;
   align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.kontaktInfoCol,
+.kontaktFormCol {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .infoCard {

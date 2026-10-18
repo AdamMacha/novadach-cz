@@ -36,7 +36,7 @@ export default function KontaktPage() {
 
         <div className={styles.kontaktGrid}>
           {/* Left: Contact Info */}
-          <div>
+          <div className={styles.kontaktInfoCol}>
             {/* CZ Representative Card */}
             <div className={`glass-card ${styles.infoCard}`} style={{ borderLeft: '4px solid #38bdf8' }}>
               <span style={{ fontSize: '0.78rem', color: '#38bdf8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.4rem' }}>
@@ -124,7 +124,7 @@ export default function KontaktPage() {
           </div>
 
           {/* Right: Interactive Form */}
-          <div>
+          <div className={styles.kontaktFormCol}>
             <Suspense fallback={<div>Načítání poptávkového formuláře...</div>}>
               <ContactForm />
             </Suspense>

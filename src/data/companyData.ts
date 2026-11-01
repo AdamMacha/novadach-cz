@@ -20,6 +20,15 @@ export const teamData: TeamMember[] = [
     highlightProjects: ['Dlouhodobý rozvoj společnosti', 'Strategická partnerství', 'Člen Cechu strechárov Slovenska']
   },
   {
+    name: 'Ing. Adrián Babiš',
+    role: 'Výkonný ředitel a jednatel',
+    email: 'obchod@novadach.cz',
+    phone: '+420 730 827 769',
+    experience: 'Řídí a strategicky rozvíjí společnost NOVADACH CZ s.r.o. na českém stavebním trhu. Má na starosti obchodní vztahy s investory a koordinaci projektů.',
+    department: 'Vedení společnosti',
+    highlightProjects: ['Expanze NOVADACH v ČR', 'Poptávky a tendry']
+  },
+  {
     name: 'Ing. Peter Kelemen',
     role: 'Obchodní ředitel',
     email: 'kelemen@novadach.sk',
@@ -89,11 +98,17 @@ export const companyData = {
   foundingYear: 1993,
   tagline: 'Specialisté na střešní pláště, skládané fasády a speciální izolace',
   cz: {
-    title: 'Působnost v České republice',
-    phone: '+420 770 123 456', // vzorový pro CZ pobočku / kontakt
-    phoneFormatted: '+420 770 123 456',
-    email: 'poptavky@novadach.cz',
-    address: 'Praha / Celá Česká republika',
+    title: 'Centrála společnosti pro Českou republiku',
+    companyName: 'NOVADACH CZ s.r.o.',
+    address: 'Naskové 1189/1u, Košíře, 150 00 Praha 5',
+    ico: '24531448',
+    dic: 'CZ24531448',
+    dataBox: '329vcpw',
+    phone: '+420 730 827 769',
+    phoneFormatted: '+420 730 827 769',
+    email: 'obchod@novadach.cz',
+    director: 'Ing. Adrián Babiš',
+    directorRole: 'Výkonný ředitel a jednatel',
     note: 'Realizace projektů v celé ČR se zázemím skupiny působící od roku 1993.'
   },
   sk: {

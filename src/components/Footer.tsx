@@ -28,9 +28,9 @@ export default function Footer() {
                 <span>Zaslat poptávku / výkaz</span>
                 <ArrowUpRight size={16} />
               </Link>
-              <a href="tel:+420770123456" className="btn btn-secondary">
+              <a href="tel:+420730827769" className="btn btn-secondary">
                 <Phone size={16} />
-                <span>+420 770 123 456</span>
+                <span>+420 730 827 769</span>
               </a>
             </div>
           </div>
@@ -45,10 +45,10 @@ export default function Footer() {
             <div className={styles.colAbout}>
               <Link href="/" className={styles.footerLogo}>
                 <Image
-                  src="/images/logos/novadach-logo-sticky-retina.png"
+                  src="/images/logos/cropped-novadach_logo_rgb-wback-1-removebg-preview.png"
                   alt="NOVADACH"
                   width={170}
-                  height={63}
+                  height={60}
                   className={styles.logoImg}
                 />
               </Link>
@@ -94,9 +94,9 @@ export default function Footer() {
               <h4 className={styles.colTitle}>Kontaktní zastoupení</h4>
               
               <div className={styles.contactBlock}>
-                <span className={styles.contactBlockTitle}>🇨🇿 Působnost pro Českou republiku:</span>
-                <p className={styles.contactItem}><Phone size={14} /> +420 770 123 456</p>
-                <p className={styles.contactItem}><Mail size={14} /> poptavky@novadach.cz</p>
+                <span className={styles.contactBlockTitle}>🇨🇿 Centrála společnosti pro Českou republiku:</span>
+                <p className={styles.contactItem}><Phone size={14} /> +420 730 827 769</p>
+                <p className={styles.contactItem}><Mail size={14} /> obchod@novadach.cz</p>
               </div>
 
               <div className={styles.contactBlock}>

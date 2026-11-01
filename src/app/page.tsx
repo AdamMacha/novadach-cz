@@ -7,12 +7,12 @@ import ReferencesGallery from '@/components/ReferencesGallery';
 import CertificatesSection from '@/components/CertificatesSection';
 import ContactForm from '@/components/ContactForm';
 import styles from './page.module.css';
-import { 
-  Building2, 
-  Award, 
-  CheckCircle2, 
-  MapPin, 
-  PhoneCall, 
+import {
+  Building2,
+  Award,
+  CheckCircle2,
+  MapPin,
+  PhoneCall,
   FileCheck,
   Zap,
   ArrowUpRight,
@@ -70,7 +70,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className={styles.featureTitle}>
-                      Kapacita pro náročné průmyslové megaprojekty
+                      Kapacita pro náročné průmyslové projekty
                     </h3>
                     <p className={styles.featureDesc}>
                       Úspěšně zvládáme desetitisíce metrů čtverečních v přísných termínech. Reference zahrnují automobilku Volkswagen, novou Gigafactory Volvo Cars Valaliky, mrakodrap Eurovea 2 či Tunel Blanka v Praze.
@@ -87,7 +87,7 @@ export default function Home() {
                       Vlastní dílenská výroba klempířských prvků
                     </h3>
                     <p className={styles.featureDesc}>
-                      Vyrábíme atiky, lišty a lemování na vlastních CNC ohýbačkách z poplastovaného plechu, hliníku, titanzinku i mědi. Žádná zpoždění externích dodávek.
+                      Vyrábíme atiky, lišty a lemování na vlastních ohýbačkách z poplastovaného plechu, hliníku, titanzinku i mědi. Žádná zpoždění externích dodávek.
                     </p>
                   </div>
                 </div>
@@ -214,7 +214,9 @@ export default function Home() {
                   </div>
                   <div>
                     <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Poptávky a tendry ČR</span>
-                    <p style={{ fontSize: '1.2rem', fontWeight: 700, color: '#ffffff' }}>+420 770 123 456</p>
+                    <a href="tel:+420730827769" style={{ display: 'block', fontSize: '1.2rem', fontWeight: 700, color: '#ffffff', textDecoration: 'none' }}>
+                      +420 730 827 769
+                    </a>
                   </div>
                 </div>
 
@@ -224,7 +226,9 @@ export default function Home() {
                   </div>
                   <div>
                     <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Zasílání projektových podkladů</span>
-                    <p style={{ fontSize: '1.15rem', fontWeight: 700, color: '#ffffff' }}>poptavky@novadach.cz</p>
+                    <a href="mailto:obchod@novadach.cz" style={{ display: 'block', fontSize: '1.15rem', fontWeight: 700, color: '#ffffff', textDecoration: 'none' }}>
+                      obchod@novadach.cz
+                    </a>
                   </div>
                 </div>
 

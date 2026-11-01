@@ -37,10 +37,10 @@ export default function Header() {
           <div className={styles.brandGroup}>
             <Link href="/" className={styles.logoLink} onClick={() => setMobileOpen(false)}>
               <Image
-                src="/images/logos/novadach-logo-sticky-retina.png"
+                src="/images/logos/cropped-novadach_logo_rgb-wback-1-removebg-preview.png"
                 alt="NOVADACH"
                 width={170}
-                height={63}
+                height={60}
                 priority
                 className={styles.logoImg}
               />
@@ -89,9 +89,9 @@ export default function Header() {
             </div>
 
             {/* Direct Phone */}
-            <a href="tel:+420770123456" className={styles.phoneLink}>
+            <a href="tel:+420730827769" className={styles.phoneLink}>
               <span className={styles.phoneDot} />
-              <span className={styles.phoneNum}>+420 770 123 456</span>
+              <span className={styles.phoneNum}>+420 730 827 769</span>
             </a>
 
             {/* CTA Button */}
@@ -135,11 +135,11 @@ export default function Header() {
           <div className={styles.mobileBottomSection}>
             <div className={styles.mobileContactBox}>
               <span className={styles.mobileContactLabel}>Poptávky a technické konzultace:</span>
-              <a href="tel:+420770123456" className={styles.mobilePhoneVal}>
-                <Phone size={16} /> +420 770 123 456
+              <a href="tel:+420730827769" className={styles.mobilePhoneVal}>
+                <Phone size={16} /> +420 730 827 769
               </a>
-              <a href="mailto:poptavky@novadach.cz" className={styles.mobileEmailVal}>
-                <Mail size={16} /> poptavky@novadach.cz
+              <a href="mailto:obchod@novadach.cz" className={styles.mobileEmailVal}>
+                <Mail size={16} /> obchod@novadach.cz
               </a>
             </div>
 

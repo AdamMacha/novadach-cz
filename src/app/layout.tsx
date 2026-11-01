@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: 'NOVADACH Česká republika',
     images: [
       {
-        url: '/images/logos/cropped-novadach_logo_rgb-wback-1.png',
+        url: '/images/logos/cropped-novadach_logo_rgb-wback-1-removebg-preview.png',
         width: 1200,
         height: 630,
         alt: 'NOVADACH Logo',

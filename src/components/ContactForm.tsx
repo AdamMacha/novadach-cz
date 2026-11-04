@@ -53,7 +53,7 @@ export default function ContactForm({ prefilledSubject }: { prefilledSubject?: s
     setErrorMessage(null);
 
     try {
-      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '7f3359eb-cf51-44eb-b685-dd2f43d6b0f7';
       if (!accessKey) {
         throw new Error('Chybí přístupový klíč pro odeslání (NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY).');
       }

@@ -237,8 +237,8 @@ export default function Home() {
                     <MapPin size={22} />
                   </div>
                   <div>
-                    <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Oblast působnosti</span>
-                    <p style={{ fontSize: '1.05rem', fontWeight: 600, color: '#ffffff' }}>Celá Česká republika & Slovensko</p>
+                    <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Sídlo společnosti v ČR</span>
+                    <p style={{ fontSize: '1.05rem', fontWeight: 600, color: '#ffffff' }}>Naskové 1189/1u, Košíře, 150 00 Praha 5</p>
                   </div>
                 </div>
               </div>

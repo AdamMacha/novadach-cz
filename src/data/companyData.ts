@@ -94,7 +94,7 @@ export const teamData: TeamMember[] = [
 
 export const companyData = {
   name: 'NOVADACH',
-  legalName: 'NOVADACH s.r.o.',
+  legalName: 'NOVADACH CZ s.r.o.',
   foundingYear: 1993,
   tagline: 'Specialisté na střešní pláště, skládané fasády a speciální izolace',
   cz: {

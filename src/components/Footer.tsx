@@ -95,6 +95,7 @@ export default function Footer() {
               
               <div className={styles.contactBlock}>
                 <span className={styles.contactBlockTitle}>🇨🇿 Centrála společnosti pro Českou republiku:</span>
+                <p className={styles.contactItem}><MapPin size={14} /> Naskové 1189/1u, Košíře, 150 00 Praha 5</p>
                 <p className={styles.contactItem}><Phone size={14} /> +420 730 827 769</p>
                 <p className={styles.contactItem}><Mail size={14} /> obchod@novadach.cz</p>
               </div>
@@ -119,14 +120,14 @@ export default function Footer() {
           {/* Bottom Bar */}
           <div className={styles.bottomBar}>
             <p className={styles.copy}>
-              © 2026 NOVADACH s.r.o. Všechna práva vyhrazena. Realizace střešních a fasádních systémů pro ČR a SR od r. 1993.
+              © 2026 NOVADACH CZ s.r.o. Všechna práva vyhrazena. Realizace střešních a fasádních systémů pro ČR a SR od r. 1993.
             </p>
             <div className={styles.legalInfo}>
-              <span>IČO: 35 846 151</span>
+              <span>IČO: 24531448</span>
               <span>•</span>
-              <span>DIČ: 20 20 23 91 77</span>
+              <span>DIČ: CZ24531448</span>
               <span>•</span>
-              <span>IČ DPH: SK 20 20 23 91 77</span>
+              <span>Sídlo: Naskové 1189/1u, 150 00 Praha 5</span>
               <span>•</span>
               <Link href="/certifikacie">Certifikace ČSN & ISO</Link>
             </div>

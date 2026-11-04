@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'průmyslové střechy Praha',
     'rekonstrukce plochých střech'
   ],
-  authors: [{ name: 'NOVADACH s.r.o.' }],
+  authors: [{ name: 'NOVADACH CZ s.r.o.' }],
   openGraph: {
     title: 'NOVADACH CZ | Špičkové střešní pláště a skládané fasády',
     description: 'Komplexní realizace střešních a obvodových plášťů průmyslových, komerčních a rezidenčních budov. Tradice od r. 1993, reference v ČR i SR.',

@@ -53,29 +53,33 @@ export default function ContactForm({ prefilledSubject }: { prefilledSubject?: s
     setErrorMessage(null);
 
     try {
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+      if (!accessKey) {
+        throw new Error('Chybí přístupový klíč pro odeslání (NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY).');
+      }
+
       const formPayload = new FormData();
-      formPayload.append('Jméno a příjmení', formData.name);
-      formPayload.append('Firma / Investor / IČO', formData.company || 'Neuvedeno');
-      formPayload.append('E-mail', formData.email);
-      formPayload.append('Telefon', formData.phone);
-      formPayload.append('Požadovaná služba', SERVICE_LABELS[formData.serviceType] || formData.serviceType);
-      formPayload.append('Lokalita stavby', formData.location || 'Česká republika');
-      formPayload.append('Popis projektu / výměry', formData.message);
+      formPayload.append('access_key', accessKey);
+      formPayload.append('subject', `Nová poptávka z webu: ${formData.name} (${SERVICE_LABELS[formData.serviceType] || formData.serviceType})`);
+      formPayload.append('from_name', 'NOVADACH CZ Web');
+      formPayload.append('name', formData.name);
+      formPayload.append('company', formData.company || 'Neuvedeno');
+      formPayload.append('email', formData.email);
+      formPayload.append('phone', formData.phone);
+      formPayload.append('service', SERVICE_LABELS[formData.serviceType] || formData.serviceType);
+      formPayload.append('location', formData.location || 'Česká republika');
+      formPayload.append('message', formData.message);
+      // Honeypot spam filter
+      formPayload.append('botcheck', '');
 
       if (formData.file) {
-        if (formData.file.size > 10 * 1024 * 1024) {
-          throw new Error('Přiložený soubor je větší než 10 MB. Pro rozsáhlejší projektovou dokumentaci prosím vložte odkaz na cloudové úložiště (OneDrive, Google Drive, Uschovna.cz apod.) do pole zprávy nebo nám soubor zašlete přímo e-mailem na obchod@novadach.cz.');
+        if (formData.file.size > 5 * 1024 * 1024) {
+          throw new Error('Přiložený soubor je větší než 5 MB. Pro rozsáhlejší projektovou dokumentaci prosím vložte odkaz na cloudové úložiště (OneDrive, Google Drive, Uschovna.cz apod.) do pole zprávy nebo nám soubor zašlete přímo e-mailem na obchod@novadach.cz.');
         }
         formPayload.append('attachment', formData.file);
       }
 
-      // FormSubmit options
-      formPayload.append('_subject', `Nová poptávka z webu: ${formData.name} (${SERVICE_LABELS[formData.serviceType] || formData.serviceType})`);
-      formPayload.append('_replyto', formData.email);
-      formPayload.append('_template', 'table');
-      formPayload.append('_captcha', 'false');
-
-      const response = await fetch(`https://formsubmit.co/ajax/${TARGET_EMAIL}`, {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -83,9 +87,10 @@ export default function ContactForm({ prefilledSubject }: { prefilledSubject?: s
         body: formPayload,
       });
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => null);
-        throw new Error(errorData?.message || `Chyba při odesílání formuláře (kód ${response.status}).`);
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok || !result?.success) {
+        throw new Error(result?.message || `Chyba při odesílání formuláře (kód ${response.status}).`);
       }
 
       setSubmitted(true);

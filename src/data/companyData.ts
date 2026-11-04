@@ -14,7 +14,7 @@ export const teamData: TeamMember[] = [
     name: 'Ing. Vladimír Benčík',
     role: 'Generální ředitel & Jednatel',
     email: 'bencik@novadach.sk',
-    phone: '+421 2 49 30 96 31',
+    phone: '+421 249 309 631',
     experience: 'Vede stavební skupinu od r. 1993 (NOVAGLASS od 1993, NOVAIZOL od 2002, NOVADACH od 2002). Přes 30 let strategického řízení velkých stavebních projektů.',
     department: 'Vedení společnosti',
     highlightProjects: ['Dlouhodobý rozvoj společnosti', 'Strategická partnerství', 'Člen Cechu strechárov Slovenska']
@@ -51,7 +51,7 @@ export const teamData: TeamMember[] = [
     name: 'Ing. Zuzana Benčíková',
     role: 'Ředitelka kontrolingu',
     email: 'bencikova@novadach.sk',
-    phone: '+421 2 49 30 96 30',
+    phone: '+421 249 309 630',
     experience: 'Řízení finančních toků, controlling stavebních rozpočtů, nákladové audity a ekonomické garance pro investory.',
     department: 'Vedení společnosti'
   },
@@ -114,13 +114,13 @@ export const companyData = {
   sk: {
     title: 'Centrála společnosti (Slovensko)',
     address: 'Stará Vajnorská 27, 831 04 Bratislava, Slovensko',
-    phone: '+421 2 49 30 96 11',
+    phone: '+421 249 309 611',
     phoneCommercial: '+421 918 957 399',
     email: 'info@novadach.sk',
     web: 'https://www.novadach.sk',
-    ico: '35 846 151',
-    dic: '20 20 23 91 77',
-    icDph: 'SK 20 20 23 91 77'
+    ico: '35846151',
+    dic: '2020239177',
+    icDph: 'SK2020239177'
   },
   certificates: [
     {

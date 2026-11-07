@@ -20,7 +20,7 @@ export const teamData: TeamMember[] = [
     highlightProjects: ['Dlouhodobý rozvoj společnosti', 'Strategická partnerství', 'Člen Cechu strechárov Slovenska']
   },
   {
-    name: 'Ing. Adrián Babiš',
+    name: 'Bc. Adrián Babiš',
     role: 'Výkonný ředitel a jednatel',
     email: 'obchod@novadach.cz',
     phone: '+420 730 827 769',
@@ -107,7 +107,7 @@ export const companyData = {
     phone: '+420 730 827 769',
     phoneFormatted: '+420 730 827 769',
     email: 'obchod@novadach.cz',
-    director: 'Ing. Adrián Babiš',
+    director: 'Bc. Adrián Babiš',
     directorRole: 'Výkonný ředitel a jednatel',
     note: 'Realizace projektů v celé ČR se zázemím skupiny působící od roku 1993.'
   },

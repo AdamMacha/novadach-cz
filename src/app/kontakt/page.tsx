@@ -90,7 +90,7 @@ export default function KontaktPage() {
                   </h4>
                   
                   <div>
-                    <div style={{ fontSize: '1rem', color: 'var(--text-primary)', fontWeight: 600 }}>Ing. Adrián Babiš</div>
+                    <div style={{ fontSize: '1rem', color: 'var(--text-primary)', fontWeight: 600 }}>Bc. Adrián Babiš</div>
                     <span style={{ fontSize: '0.78rem', color: '#38bdf8', textTransform: 'uppercase', fontWeight: 700 }}>Výkonný ředitel a jednatel</span>
                     <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
                       Tel: <a href="tel:+420730827769" style={{ color: 'var(--text-primary)', fontWeight: 600 }}>+420 730 827 769</a>

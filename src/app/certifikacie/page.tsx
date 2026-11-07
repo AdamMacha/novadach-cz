@@ -6,8 +6,18 @@ import styles from './certifikacie.module.css';
 import { ShieldCheck, Award, FileText, CheckCircle, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Certifikace ISO & Normy ČSN | NOVADACH CZ',
-  description: 'Prohlédněte si naše mezinárodní certifikáty ISO 9001, ISO 14001 a ISO 45001 pro střešní a fasádní montáže v ČR a SR.',
+  title: 'Certifikace ISO 9001, 14001, 45001 & Normy ČSN pro střechy a hydroizolace',
+  description:
+    'Mezinárodní certifikáty kvality ISO 9001, environmentálního managementu ISO 14001 a BOZP ISO 45001 pro montáž střešních plášťů, fóliových střech (PVC, TPO, Fatrafol), asfaltových pásů SBS/APP, fasádních panelů Kingspan a hydroizolací v ČR a SR.',
+  alternates: {
+    canonical: 'https://www.novadach.cz/certifikacie',
+  },
+  openGraph: {
+    title: 'Certifikace ISO 9001 / 14001 / 45001 | NOVADACH CZ',
+    description:
+      'Ověřené certifikáty řízení kvality, ekologie a bezpečnosti práce pro výběrová řízení a stavební tendry v České republice.',
+    url: 'https://www.novadach.cz/certifikacie',
+  },
 };
 
 export default function CertifikaciePage() {

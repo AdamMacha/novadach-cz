@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import ServicesGrid from '@/components/ServicesGrid';
 import ReferencesGallery from '@/components/ReferencesGallery';
 import CertificatesSection from '@/components/CertificatesSection';
+import TechnicalSeoSection from '@/components/TechnicalSeoSection';
 import ContactForm from '@/components/ContactForm';
 import styles from './page.module.css';
 import {
@@ -193,6 +194,9 @@ export default function Home() {
           <CertificatesSection />
         </div>
       </section>
+
+      {/* 5b. Technical Material Matrix & SEO FAQ Hub */}
+      <TechnicalSeoSection />
 
       {/* 6. Contact / Inquiry Section */}
       <section className="section" id="poptavka">

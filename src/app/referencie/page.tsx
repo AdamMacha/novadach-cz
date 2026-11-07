@@ -6,8 +6,18 @@ import styles from './referencie.module.css';
 import { ArrowRight, Building, Award, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Reference v ČR a SR | NOVADACH CZ',
-  description: 'Prohlédněte si naše stavební reference v České republice i na Slovensku: Tunel Blanka Praha, Volkswagen, Eurovea, AS Nivy, Volvo Cars Valaliky.',
+  title: 'Reference plochých střech, fasád a hydroizolací v ČR a SR',
+  description:
+    'Prohlédněte si stavební reference NOVADACH v České republice a na Slovensku: Tunel Blanka Praha (tunelové izolace a hydroizolace proti tlakové vodě), Volkswagen, Eurovea 2, AS Nivy (zelené střechy), Volvo Cars Valaliky (montáž trapézových plechů a střešních plášťů), LP Kunice a OC Černý Most.',
+  alternates: {
+    canonical: 'https://www.novadach.cz/referencie',
+  },
+  openGraph: {
+    title: 'Reference v ČR a SR | Ploché střechy, sendvičové panely a hydroizolace | NOVADACH CZ',
+    description:
+      'Přes 250 úspěšně dokončených průmyslových hal, logistických center, dopravních tunelů a komerčních budov v ČR a SR.',
+    url: 'https://www.novadach.cz/referencie',
+  },
 };
 
 export default function ReferenciePage() {

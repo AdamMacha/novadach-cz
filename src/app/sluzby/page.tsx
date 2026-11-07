@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { servicesData } from '@/data/servicesData';
 import { referencesData } from '@/data/referencesData';
+import TechnicalSeoSection from '@/components/TechnicalSeoSection';
 import styles from './sluzby.module.css';
 import { 
   ShieldCheck, 
@@ -13,13 +14,22 @@ import {
   Wrench, 
   Check, 
   ArrowRight,
-  Sparkles,
-  FileText
+  Sparkles
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Služby a technologie | NOVADACH CZ',
-  description: 'Komplexní nabídka střešních plášťů, skládaných fasád, hydroizolací podzemních staveb, kompozitních obkladů BOND a klempířských prací.',
+  title: 'Služby a technologie – Ploché střechy, sendvičové panely, hydroizolace a trapézové plechy',
+  description:
+    'Kompletní montáž střešních plášťů, ploché a fóliové střechy (PVC, mPVC, TPO, Fatrafol), asfaltové pásy (SBS, APP, samolepicí pásy, parozábrany), tepelné izolace a zateplení střech (PIR, minerální vata MW, kamenná vata, EPS, XPS), montáž trapézových plechů, fasádní sendvičové panely (Kingspan), hydroizolace základů a tunelů proti tlakové vodě a radonu (Dualproof, HDPE), ocelové výměny a klempířské prvky.',
+  alternates: {
+    canonical: 'https://www.novadach.cz/sluzby',
+  },
+  openGraph: {
+    title: 'Služby a technologie | Ploché střechy, opláštění budov a hydroizolace | NOVADACH CZ',
+    description:
+      'Fóliové střechy (mPVC, TPO, Fatrafol), asfaltové pásy SBS/APP, zateplení střech (PIR, minerální vlna MW, EPS, XPS), sendvičové panely Kingspan, trapézové plechy, hydroizolace proti tlakové vodě a radonu (Dualproof, HDPE) a tunelové izolace.',
+    url: 'https://www.novadach.cz/sluzby',
+  },
 };
 
 export default function SluzbyPage() {
@@ -49,10 +59,10 @@ export default function SluzbyPage() {
         <div className="section-header" style={{ marginBottom: '3.5rem' }}>
           <span className="section-tag">Technologický katalog</span>
           <h1 className="section-title">
-            Komplexní řešení pro <span className="text-gradient">střechy, fasády a izolace</span>
+            Komplexní řešení pro <span className="text-gradient">ploché střechy, fasády a hydroizolace</span>
           </h1>
           <p className="section-subtitle">
-            Disponujeme vlastním inženýrským týmem, certifikovanými montéry a dílenským zázemím pro výrobu klempířských a pomocných ocelových prvků.
+            Disponujeme vlastním inženýrským týmem, certifikovanými izolatéry a dílenským zázemím pro montáž střešních plášťů, trapézových plechů, sendvičových panelů, speciálních hydroizolací i výrobu klempířských a ocelových prvků.
           </p>
         </div>
 
@@ -62,7 +72,7 @@ export default function SluzbyPage() {
             const relatedProjects = referencesData.filter((r) => service.referenceIds.includes(r.id));
 
             return (
-              <div 
+              <article 
                 key={service.id} 
                 id={service.id}
                 className={`glass-card ${styles.serviceCard}`} 
@@ -93,10 +103,10 @@ export default function SluzbyPage() {
                 <div className={styles.featuresBenefitsGrid}>
                   {/* Features Column */}
                   <div className={styles.detailColumn}>
-                    <h4 style={{ fontSize: '1.05rem', color: 'var(--text-primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <h3 style={{ fontSize: '1.05rem', color: 'var(--text-primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <Check size={18} style={{ color: 'var(--accent-amber)' }} />
-                      Rozsah realizovaných prací:
-                    </h4>
+                      Rozsah realizovaných prací a technologií:
+                    </h3>
                     <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                       {service.features.map((feat, i) => (
                         <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
@@ -109,10 +119,10 @@ export default function SluzbyPage() {
 
                   {/* Benefits Column */}
                   <div className={styles.detailColumn}>
-                    <h4 style={{ fontSize: '1.05rem', color: 'var(--text-primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <h3 style={{ fontSize: '1.05rem', color: 'var(--text-primary)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <Sparkles size={18} style={{ color: 'var(--accent-amber)' }} />
                       Výhody pro investora a garance:
-                    </h4>
+                    </h3>
                     <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                       {service.benefits.map((b, i) => (
                         <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
@@ -127,7 +137,7 @@ export default function SluzbyPage() {
                 {/* Materials Used */}
                 <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                   <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-                    Certifikované materiály:
+                    Certifikované materiály a systémy:
                   </span>
                   <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                     {service.materials.map((mat, i) => (
@@ -137,6 +147,30 @@ export default function SluzbyPage() {
                     ))}
                   </div>
                 </div>
+
+                {/* SEO Keywords / Specializations Row */}
+                {service.seoKeywords && service.seoKeywords.length > 0 && (
+                  <div style={{ marginTop: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    <span style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)' }}>
+                      Klíčové oblasti:
+                    </span>
+                    {service.seoKeywords.map((kw, kIdx) => (
+                      <span
+                        key={kIdx}
+                        style={{
+                          fontSize: '0.75rem',
+                          color: 'var(--text-muted)',
+                          background: 'rgba(245, 158, 11, 0.06)',
+                          border: '1px solid rgba(245, 158, 11, 0.18)',
+                          padding: '0.15rem 0.55rem',
+                          borderRadius: 'var(--radius-pill)',
+                        }}
+                      >
+                        {kw}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
                 {/* Related Real Projects */}
                 {relatedProjects.length > 0 && (
@@ -169,13 +203,13 @@ export default function SluzbyPage() {
                     </div>
                   </div>
                 )}
-              </div>
+              </article>
             );
           })}
         </div>
 
         {/* Bottom CTA */}
-        <div style={{ marginTop: '4rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '4rem', marginBottom: '2rem', textAlign: 'center' }}>
           <div className={`glass-card ${styles.bottomCtaCard}`}>
             <h3 style={{ fontSize: 'clamp(1.35rem, 4vw, 1.8rem)', marginBottom: '0.75rem' }}>Potřebujete individuální technické řešení?</h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '1.75rem' }}>
@@ -188,6 +222,9 @@ export default function SluzbyPage() {
           </div>
         </div>
       </div>
+
+      {/* Technical SEO Matrix & FAQ */}
+      <TechnicalSeoSection />
     </div>
   );
 }

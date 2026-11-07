@@ -16,8 +16,18 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'O nás a náš tým | NOVADACH CZ',
-  description: 'Přečtěte si o historii společnosti NOVADACH od roku 1993, našem vedení, projektových manažerech a filozofii kvality.',
+  title: 'O společnosti a odborný tým – Specialisté na střechy, fasády a izolace od r. 1993',
+  description:
+    'Poznejte historii stavební skupiny NOVADACH od roku 1993, naše vedení, projektové manažery a vlastní výrobní kapacity pro ploché a fóliové střechy, fasádní panely, hydroizolace, ocelové konstrukce a klempířské prvky.',
+  alternates: {
+    canonical: 'https://www.novadach.cz/o-nas',
+  },
+  openGraph: {
+    title: 'O nás a náš tým | NOVADACH CZ',
+    description:
+      'Více než 30 let zkušeností v realizaci střešních plášťů, skládaných fasád ze sendvičových panelů a speciálních hydroizolací v ČR a SR.',
+    url: 'https://www.novadach.cz/o-nas',
+  },
 };
 
 export default function ONasPage() {

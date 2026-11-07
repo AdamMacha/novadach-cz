@@ -19,42 +19,42 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    id: 'eurovea',
+    id: 'eurovea-2',
     title: 'EUROVEA 2, Mrakodrap & Nákupní centrum',
     location: 'Bratislava',
     country: 'SK',
     category: 'Polyfunkční & Výšková stavba',
-    scope: 'Kompletní střešní pláště, izolace spodní stavby a klempířské konstrukce',
+    scope: 'Kompletní střešní pláště, izolace spodní stavby proti tlakové vodě a klempířské prvky',
     year: '2021 – 2023',
     image: '/images/referencie/Eurovea-1.jpg'
   },
   {
-    id: 'blanka',
+    id: 'tunel-blanka',
     title: 'Tunel Blanka, Městský okruh Praha',
     location: 'Praha, Česká republika',
     country: 'CZ',
     category: '🇨🇿 Klíčová reference v ČR',
-    scope: 'Speciální hydroizolace podzemních tunelových úseků a dopravních staveb',
+    scope: 'Tunelové izolace primárního ostění a speciální hydroizolace proti tlakové vodě',
     year: 'Praha',
     image: '/images/referencie/blanka_razba12-1.jpg'
   },
   {
-    id: 'vw',
+    id: 'volkswagen-bratislava',
     title: 'VOLKSWAGEN Bratislava (Hala H1 + M6)',
     location: 'Bratislava Devínska Nová Ves',
     country: 'SK',
     category: 'Automobilový průmysl',
-    scope: 'Nosné trapézové plechy, zateplení střešních plášťů a certifikované záchytné systémy',
+    scope: 'Montáž trapézových plechů, zateplení střech (PIR, minerální vata) a fóliové střechy mPVC',
     year: '2022 – 2023',
     image: '/images/referencie/VW-H1_1.jpg'
   },
   {
-    id: 'volvo',
+    id: 'volvo-cars-valaliky',
     title: 'VOLVO CARS Valaliky (Košice)',
     location: 'Valaliky u Košic',
     country: 'SK',
     category: 'Nová Gigafactory',
-    scope: 'Průmyslové střešní pláště a velkorozponové trapézové plechy',
+    scope: 'Montáž střešních plášťů, velkorozponové trapézové plechy a fasádní sendvičové panely',
     year: '2023 – 2024',
     image: '/images/referencie/Valaliky_2023_10_9.jpg'
   }
@@ -112,7 +112,7 @@ export default function HeroSection() {
           </h1>
 
           <p className={styles.heroLead}>
-            Kompletní dodávka obvodových plášťů, nosných trapézových plechů, sendvičových panelů a hydroizolací pro průmyslové haly, logistické areály a komerční budovy. Dlouhodobě prověřený partner v České republice i na Slovensku.
+            Kompletní montáž střešních a obvodových plášťů: ploché a fóliové střechy (PVC, mPVC, TPO, Fatrafol), asfaltové pásy (SBS, APP), zateplení střech (PIR, minerální vata MW, EPS, XPS), montáž trapézových plechů, fasádní sendvičové panely (Kingspan), hydroizolace základů a tunelů proti tlakové vodě a radonu (Dualproof, HDPE), ocelové výměny a klempířské prvky v ČR a SR.
           </p>
 
           <div className={styles.ctaRow}>

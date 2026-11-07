@@ -54,8 +54,9 @@ export default function ReferencesGallery({ initialFilter = 'all', limit }: Prop
       {/* Projects Grid */}
       <div className={styles.grid}>
         {displayedProjects.map((project) => (
-          <div
+          <article
             key={project.id}
+            id={project.id}
             className={`glass-card ${styles.card}`}
             onClick={() => setActiveModalProject(project)}
           >
@@ -63,7 +64,7 @@ export default function ReferencesGallery({ initialFilter = 'all', limit }: Prop
             <div className={styles.imageBox} style={{ position: 'relative' }}>
               <Image
                 src={project.image}
-                alt={project.title}
+                alt={`${project.title} – ${project.subtitle} (${project.location})`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className={styles.image}
@@ -109,7 +110,7 @@ export default function ReferencesGallery({ initialFilter = 'all', limit }: Prop
                 <ArrowRight size={14} className={styles.arrowIcon} />
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
 

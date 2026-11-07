@@ -15,8 +15,18 @@ import {
 import { companyData } from '@/data/companyData';
 
 export const metadata: Metadata = {
-  title: 'Kontakt & Poptávka | NOVADACH CZ',
-  description: 'Získejte nezávaznou nabídku nebo konzultaci střešních a fasádních plášťů v České republice. Kontakty na obchodní i výrobní vedení.',
+  title: 'Kontakt & Poptávka – Kalkulace plochých střech, opláštění a hydroizolací',
+  description:
+    'Získejte nezávaznou cenovou nabídku nebo technickou konzultaci pro ploché a fóliové střechy, zateplení střech, montáž trapézových plechů, sendvičové fasádní panely, hydroizolace proti tlakové vodě a radonu, ocelové výměny a klempířské prvky v ČR.',
+  alternates: {
+    canonical: 'https://www.novadach.cz/kontakt',
+  },
+  openGraph: {
+    title: 'Kontakt & Poptávka | NOVADACH CZ s.r.o.',
+    description:
+      'Kontaktujte českou centrálu NOVADACH CZ s.r.o. v Praze nebo zašlete projektovou dokumentaci a výkaz výměr k nezávaznému nacenění.',
+    url: 'https://www.novadach.cz/kontakt',
+  },
 };
 
 export default function KontaktPage() {

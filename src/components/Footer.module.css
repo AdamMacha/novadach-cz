@@ -206,6 +206,28 @@
   color: var(--text-muted);
 }
 
+.bottomLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.creator {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.creatorLink {
+  color: var(--accent-amber);
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.creatorLink:hover {
+  text-decoration: underline;
+  color: #fbbf24;
+}
+
 .legalInfo {
   display: flex;
   align-items: center;

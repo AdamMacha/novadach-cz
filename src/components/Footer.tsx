@@ -119,9 +119,22 @@ export default function Footer() {
 
           {/* Bottom Bar */}
           <div className={styles.bottomBar}>
-            <p className={styles.copy}>
-              © 2026 NOVADACH CZ s.r.o. Všechna práva vyhrazena. Realizace střešních a fasádních systémů pro ČR a SR od r. 1993.
-            </p>
+            <div className={styles.bottomLeft}>
+              <p className={styles.copy}>
+                © 2026 NOVADACH CZ s.r.o. Všechna práva vyhrazena. Realizace střešních a fasádních systémů pro ČR a SR od r. 1993.
+              </p>
+              <p className={styles.creator}>
+                Tento web vytvořilo studio{' '}
+                <a
+                  href="https://www.technologio.eu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.creatorLink}
+                >
+                  Technologio
+                </a>
+              </p>
+            </div>
             <div className={styles.legalInfo}>
               <span>IČO: 24531448</span>
               <span>•</span>

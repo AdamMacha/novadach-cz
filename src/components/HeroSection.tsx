@@ -85,9 +85,9 @@ export default function HeroSection() {
           >
             <Image
               src={s.image}
-              alt={s.title}
+              alt={`${s.title} – ${s.scope}`}
               fill
-              priority={idx === 0}
+              preload={idx === 0}
               sizes="100vw"
               className={styles.bgImage}
             />
@@ -142,7 +142,7 @@ export default function HeroSection() {
               <MapPin size={13} style={{ color: 'var(--accent-amber)' }} />
               {activeSlide.location}
             </span>
-            <Link href={`/referencie#${activeSlide.id}`} className={styles.cardLink}>
+            <Link href={`/referencie/${activeSlide.id}`} className={styles.cardLink}>
               <span>Detail stavby</span>
               <ArrowRight size={13} />
             </Link>

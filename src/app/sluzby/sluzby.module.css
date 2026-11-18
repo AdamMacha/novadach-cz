@@ -115,7 +115,10 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .cardTopRow a {
+  .cardTopRow > div:last-child {
+    width: 100%;
+  }
+  .cardTopRow > div:last-child a {
     width: 100%;
     justify-content: center;
   }

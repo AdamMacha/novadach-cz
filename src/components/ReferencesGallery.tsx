@@ -93,7 +93,14 @@ export default function ReferencesGallery({ initialFilter = 'all', limit }: Prop
                 <span>{project.location}</span>
               </div>
 
-              <h3 className={styles.title}>{project.title}</h3>
+              <h3 className={styles.title}>
+                <Link
+                  href={`/referencie/${project.id}`}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {project.title}
+                </Link>
+              </h3>
               <p className={styles.subtitle}>{project.subtitle}</p>
 
               <div className={styles.servicesList}>
@@ -106,8 +113,20 @@ export default function ReferencesGallery({ initialFilter = 'all', limit }: Prop
               </div>
 
               <div className={styles.viewDetailRow}>
-                <span className={styles.viewDetailText}>Zobrazit technické detaily</span>
-                <ArrowRight size={14} className={styles.arrowIcon} />
+                <Link
+                  href={`/referencie/${project.id}`}
+                  className={styles.viewDetailText}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Zobrazit detail stavby
+                </Link>
+                <Link
+                  href={`/referencie/${project.id}`}
+                  aria-label={`Detail projektu ${project.title}`}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <ArrowRight size={14} className={styles.arrowIcon} />
+                </Link>
               </div>
             </div>
           </article>
@@ -172,7 +191,7 @@ export default function ReferencesGallery({ initialFilter = 'all', limit }: Prop
                   </ul>
                 </div>
 
-                <div className={styles.modalCta}>
+                <div className={styles.modalCta} style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                   <Link
                     href={`/kontakt?reference=${encodeURIComponent(activeModalProject.title)}`}
                     className="btn btn-primary"
@@ -180,6 +199,14 @@ export default function ReferencesGallery({ initialFilter = 'all', limit }: Prop
                   >
                     <span>Poptat podobné řešení</span>
                     <ArrowRight size={15} />
+                  </Link>
+                  <Link
+                    href={`/referencie/${activeModalProject.id}`}
+                    className="btn btn-secondary"
+                    onClick={() => setActiveModalProject(null)}
+                  >
+                    <span>Otevřít stránku projektu</span>
+                    <ExternalLink size={14} />
                   </Link>
                 </div>
               </div>

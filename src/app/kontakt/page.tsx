@@ -1,38 +1,50 @@
 import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import JsonLdScript from '@/components/JsonLdScript';
+import { buildBreadcrumbJsonLd, buildContactPageJsonLd } from '@/lib/jsonLd';
+import { buildPageMetadata, SK_SITE_URL } from '@/lib/seo';
 import styles from './kontakt.module.css';
 import { 
   Phone, 
   Mail, 
   MapPin, 
-  Clock, 
-  ShieldCheck, 
   ExternalLink,
   Building,
   UserCheck
 } from 'lucide-react';
-import { companyData } from '@/data/companyData';
 
-export const metadata: Metadata = {
-  title: 'Kontakt & Poptávka – Kalkulace plochých střech, opláštění a hydroizolací',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Kontakt & Poptávka – Kalkulace střech a izolací',
   description:
-    'Získejte nezávaznou cenovou nabídku nebo technickou konzultaci pro ploché a fóliové střechy, zateplení střech, montáž trapézových plechů, sendvičové fasádní panely, hydroizolace proti tlakové vodě a radonu, ocelové výměny a klempířské prvky v ČR.',
-  alternates: {
-    canonical: 'https://www.novadach.cz/kontakt',
-  },
-  openGraph: {
-    title: 'Kontakt & Poptávka | NOVADACH CZ s.r.o.',
-    description:
-      'Kontaktujte českou centrálu NOVADACH CZ s.r.o. v Praze nebo zašlete projektovou dokumentaci a výkaz výměr k nezávaznému nacenění.',
-    url: 'https://www.novadach.cz/kontakt',
-  },
-};
+    'Poptávka plochých střech, trapézových plechů, sendvičových panelů a hydroizolací v ČR. Kontakt na centrálu NOVADACH CZ v Praze 5, telefon +420 730 827 769.',
+  path: '/kontakt',
+  skUrl: `${SK_SITE_URL}/kontakt/`,
+  ogTitle: 'Kontakt & Poptávka | NOVADACH CZ s.r.o.',
+  ogDescription:
+    'Kontaktujte českou centrálu NOVADACH CZ s.r.o. v Praze nebo zašlete projektovou dokumentaci a výkaz výměr k nezávaznému nacenění.',
+  keywords: [
+    'kontakt NOVADACH CZ',
+    'poptávka ploché střechy Praha',
+    'kalkulace sendvičové panely',
+    'cenová nabídka hydroizolace',
+    'obchod@novadach.cz',
+  ],
+});
+
+const breadcrumbs = [
+  { name: 'Úvod', path: '/' },
+  { name: 'Kontakt', path: '/kontakt' },
+];
 
 export default function KontaktPage() {
   return (
     <div className={styles.pageWrapper}>
+      <JsonLdScript data={buildBreadcrumbJsonLd(breadcrumbs)} />
+      <JsonLdScript data={buildContactPageJsonLd()} />
       <div className="container">
+        <Breadcrumbs items={breadcrumbs} />
         {/* Header */}
         <div className="section-header" style={{ marginBottom: '3.5rem' }}>
           <span className="section-tag">Spojte se s námi</span>

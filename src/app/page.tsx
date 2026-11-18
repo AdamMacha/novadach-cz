@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
@@ -7,6 +8,10 @@ import ReferencesGallery from '@/components/ReferencesGallery';
 import CertificatesSection from '@/components/CertificatesSection';
 import TechnicalSeoSection from '@/components/TechnicalSeoSection';
 import ContactForm from '@/components/ContactForm';
+import JsonLdScript from '@/components/JsonLdScript';
+import { seoFaqData } from '@/data/servicesData';
+import { buildFaqJsonLd } from '@/lib/jsonLd';
+import { buildPageMetadata, SITE_NAME, SK_SITE_URL } from '@/lib/seo';
 import styles from './page.module.css';
 import {
   Building2,
@@ -21,9 +26,37 @@ import {
   ChevronRight
 } from 'lucide-react';
 
+export const metadata: Metadata = buildPageMetadata({
+  title: {
+    absolute: `${SITE_NAME} | Ploché střechy, sendvičové fasády a hydroizolace`,
+  },
+  description:
+    'Realizace plochých a fóliových střech (PVC, mPVC, TPO, Fatrafol), trapézových plechů, sendvičových panelů Kingspan a hydroizolací staveb i tunelů v ČR. Tradice od r. 1993.',
+  path: '',
+  skUrl: `${SK_SITE_URL}/`,
+  keywords: [
+    'NOVADACH CZ',
+    'ploché střechy',
+    'fóliové střechy',
+    'PVC fólie Fatrafol',
+    'TPO fólie',
+    'asfaltové pásy SBS APP',
+    'zateplení střech PIR MW EPS XPS',
+    'montáž trapézových plechů',
+    'sendvičové panely Kingspan',
+    'obvodový plášť a opláštění',
+    'hydroizolace proti tlakové vodě a radonu',
+    'Dualproof HDPE',
+    'tunelové izolace',
+    'ocelové výměny',
+    'klempířské prvky',
+  ],
+});
+
 export default function Home() {
   return (
     <>
+      <JsonLdScript data={buildFaqJsonLd(seoFaqData, '/')} />
       {/* 1. Cinematic Hero Section */}
       <HeroSection />
 
@@ -124,7 +157,7 @@ export default function Home() {
               <div className={styles.showcaseCard}>
                 <Image
                   src="/images/referencie/Eurovea-2.jpg"
-                  alt="Realizace NOVADACH"
+                  alt="EUROVEA 2 Bratislava – mrakodrap a realizace střešních plášťů i hydroizolací NOVADACH"
                   fill
                   sizes="(max-width: 768px) 100vw, 600px"
                   style={{ objectFit: 'cover' }}

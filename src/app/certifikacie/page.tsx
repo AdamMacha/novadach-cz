@@ -1,29 +1,46 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import CertificatesSection from '@/components/CertificatesSection';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import JsonLdScript from '@/components/JsonLdScript';
 import Link from 'next/link';
+import { buildBreadcrumbJsonLd, buildCertificatesPageJsonLd } from '@/lib/jsonLd';
+import { buildPageMetadata, SK_SITE_URL } from '@/lib/seo';
 import styles from './certifikacie.module.css';
-import { ShieldCheck, Award, FileText, CheckCircle, ArrowRight } from 'lucide-react';
+import { ShieldCheck, ArrowRight } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Certifikace ISO 9001, 14001, 45001 & Normy ČSN pro střechy a hydroizolace',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Certifikace ISO 9001, 14001, 45001 & Normy ČSN',
   description:
-    'Mezinárodní certifikáty kvality ISO 9001, environmentálního managementu ISO 14001 a BOZP ISO 45001 pro montáž střešních plášťů, fóliových střech (PVC, TPO, Fatrafol), asfaltových pásů SBS/APP, fasádních panelů Kingspan a hydroizolací v ČR a SR.',
-  alternates: {
-    canonical: 'https://www.novadach.cz/certifikacie',
-  },
-  openGraph: {
-    title: 'Certifikace ISO 9001 / 14001 / 45001 | NOVADACH CZ',
-    description:
-      'Ověřené certifikáty řízení kvality, ekologie a bezpečnosti práce pro výběrová řízení a stavební tendry v České republice.',
-    url: 'https://www.novadach.cz/certifikacie',
-  },
-};
+    'Certifikáty kvality ISO 9001, ekologie ISO 14001 a BOZP ISO 45001 pro montáž plochých střech, fasádních panelů Kingspan a hydroizolací do stavebních tendrů v ČR.',
+  path: '/certifikacie',
+  skUrl: `${SK_SITE_URL}/organizacna-struktura/`,
+  ogTitle: 'Certifikace ISO 9001 / 14001 / 45001 | NOVADACH CZ',
+  ogDescription:
+    'Ověřené certifikáty řízení kvality, ekologie a bezpečnosti práce pro výběrová řízení a stavební tendry v České republice.',
+  imagePath: '/images/certifikaty/ISO-9001.png',
+  imageAlt: 'Certifikát ISO 9001:2015 – Systém managementu kvality NOVADACH',
+  keywords: [
+    'certifikace ISO 9001',
+    'ISO 14001',
+    'ISO 45001 BOZP',
+    'normy ČSN ploché střechy',
+    'certifikát do stavebních tendrů',
+  ],
+});
+
+const breadcrumbs = [
+  { name: 'Úvod', path: '/' },
+  { name: 'Certifikace', path: '/certifikacie' },
+];
 
 export default function CertifikaciePage() {
   return (
     <div className={styles.pageWrapper}>
+      <JsonLdScript data={buildBreadcrumbJsonLd(breadcrumbs)} />
+      <JsonLdScript data={buildCertificatesPageJsonLd()} />
       <div className="container">
+        <Breadcrumbs items={breadcrumbs} />
         {/* Header */}
         <div className="section-header" style={{ marginBottom: '3.5rem' }}>
           <span className="section-tag">Mezinárodní standardy kvality</span>

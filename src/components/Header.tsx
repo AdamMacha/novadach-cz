@@ -38,10 +38,10 @@ export default function Header() {
             <Link href="/" className={styles.logoLink} onClick={() => setMobileOpen(false)}>
               <Image
                 src="/images/logos/cropped-novadach_logo_rgb-wback-1-removebg-preview.png"
-                alt="NOVADACH"
+                alt="NOVADACH CZ"
                 width={170}
                 height={60}
-                priority
+                loading="eager"
                 className={styles.logoImg}
               />
             </Link>

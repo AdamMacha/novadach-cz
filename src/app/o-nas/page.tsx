@@ -3,37 +3,46 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import TeamSection from '@/components/TeamSection';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import JsonLdScript from '@/components/JsonLdScript';
+import { buildAboutPageJsonLd, buildBreadcrumbJsonLd } from '@/lib/jsonLd';
+import { buildPageMetadata, SK_SITE_URL } from '@/lib/seo';
 import styles from './onas.module.css';
-import { 
-  Building2, 
-  Award, 
-  ShieldCheck, 
-  CheckCircle2, 
-  ArrowRight, 
-  Users, 
-  Clock, 
-  ExternalLink 
-} from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'O společnosti a odborný tým – Specialisté na střechy, fasády a izolace od r. 1993',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'O společnosti a odborný tým od r. 1993',
   description:
-    'Poznejte historii stavební skupiny NOVADACH od roku 1993, naše vedení, projektové manažery a vlastní výrobní kapacity pro ploché a fóliové střechy, fasádní panely, hydroizolace, ocelové konstrukce a klempířské prvky.',
-  alternates: {
-    canonical: 'https://www.novadach.cz/o-nas',
-  },
-  openGraph: {
-    title: 'O nás a náš tým | NOVADACH CZ',
-    description:
-      'Více než 30 let zkušeností v realizaci střešních plášťů, skládaných fasád ze sendvičových panelů a speciálních hydroizolací v ČR a SR.',
-    url: 'https://www.novadach.cz/o-nas',
-  },
-};
+    'Historie stavební skupiny NOVADACH od roku 1993, vedení v ČR a SR, projektoví manažeři a vlastní kapacity pro ploché střechy, fasádní panely, izolace a klempířství.',
+  path: '/o-nas',
+  skUrl: `${SK_SITE_URL}/o-nas-profil-spolocnosti/`,
+  ogTitle: 'O nás a náš tým | NOVADACH CZ',
+  ogDescription:
+    'Více než 30 let zkušeností v realizaci střešních plášťů, skládaných fasád ze sendvičových panelů a speciálních hydroizolací v ČR a SR.',
+  imagePath: '/images/referencie/BTC-Pradiaren-Bratislava-2019-2021.jpg',
+  imageAlt: 'BTC Pradiareň 1900 – historická konverze realizovaná skupinou NOVADACH',
+  keywords: [
+    'NOVADACH CZ s.r.o.',
+    'o společnosti NOVADACH',
+    'historie od roku 1993',
+    'tým projektových manažerů',
+    'realizace plochých střech Praha',
+    'Cech strechárov Slovenska',
+  ],
+});
+
+const breadcrumbs = [
+  { name: 'Úvod', path: '/' },
+  { name: 'O nás', path: '/o-nas' },
+];
 
 export default function ONasPage() {
   return (
     <div className={styles.pageWrapper}>
+      <JsonLdScript data={buildBreadcrumbJsonLd(breadcrumbs)} />
+      <JsonLdScript data={buildAboutPageJsonLd()} />
       <div className="container">
+        <Breadcrumbs items={breadcrumbs} />
         {/* Page Header */}
         <div className="section-header">
           <span className="section-tag">Tradice & Odbornost</span>

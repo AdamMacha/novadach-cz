@@ -1,9 +1,17 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { servicesData } from '@/data/servicesData';
+import { seoFaqData, servicesData } from '@/data/servicesData';
 import { referencesData } from '@/data/referencesData';
 import TechnicalSeoSection from '@/components/TechnicalSeoSection';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import JsonLdScript from '@/components/JsonLdScript';
+import {
+  buildBreadcrumbJsonLd,
+  buildFaqJsonLd,
+  buildServicesCollectionJsonLd,
+} from '@/lib/jsonLd';
+import { buildPageMetadata, SK_SITE_URL } from '@/lib/seo';
 import styles from './sluzby.module.css';
 import { 
   ShieldCheck, 
@@ -17,20 +25,32 @@ import {
   Sparkles
 } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Služby a technologie – Ploché střechy, sendvičové panely, hydroizolace a trapézové plechy',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Služby: ploché střechy, fasády a hydroizolace',
   description:
-    'Kompletní montáž střešních plášťů, ploché a fóliové střechy (PVC, mPVC, TPO, Fatrafol), asfaltové pásy (SBS, APP, samolepicí pásy, parozábrany), tepelné izolace a zateplení střech (PIR, minerální vata MW, kamenná vata, EPS, XPS), montáž trapézových plechů, fasádní sendvičové panely (Kingspan), hydroizolace základů a tunelů proti tlakové vodě a radonu (Dualproof, HDPE), ocelové výměny a klempířské prvky.',
-  alternates: {
-    canonical: 'https://www.novadach.cz/sluzby',
-  },
-  openGraph: {
-    title: 'Služby a technologie | Ploché střechy, opláštění budov a hydroizolace | NOVADACH CZ',
-    description:
-      'Fóliové střechy (mPVC, TPO, Fatrafol), asfaltové pásy SBS/APP, zateplení střech (PIR, minerální vlna MW, EPS, XPS), sendvičové panely Kingspan, trapézové plechy, hydroizolace proti tlakové vodě a radonu (Dualproof, HDPE) a tunelové izolace.',
-    url: 'https://www.novadach.cz/sluzby',
-  },
-};
+    'Montáž střešních plášťů, fóliových střech (PVC, TPO, Fatrafol), trapézových plechů, zateplení (PIR, MW, EPS, XPS), sendvičových panelů Kingspan a hydroizolací.',
+  path: '/sluzby',
+  skUrl: `${SK_SITE_URL}/nase-sluzby/`,
+  ogTitle: 'Služby a technologie | Ploché střechy, opláštění a hydroizolace | NOVADACH CZ',
+  keywords: [
+    'montáž střešních plášťů',
+    'ploché a fóliové střechy',
+    'asfaltové pásy SBS APP',
+    'trapézové plechy',
+    'zateplení střech PIR MW EPS XPS',
+    'sendvičové panely Kingspan',
+    'hydroizolace tlaková voda radon',
+    'Dualproof HDPE',
+    'tunelové izolace',
+    'ocelové výměny',
+    'klempířské prvky',
+  ],
+});
+
+const breadcrumbs = [
+  { name: 'Úvod', path: '/' },
+  { name: 'Služby', path: '/sluzby' },
+];
 
 export default function SluzbyPage() {
   const getIcon = (id: string) => {
@@ -54,7 +74,11 @@ export default function SluzbyPage() {
 
   return (
     <div className={styles.pageWrapper}>
+      <JsonLdScript data={buildBreadcrumbJsonLd(breadcrumbs)} />
+      <JsonLdScript data={buildServicesCollectionJsonLd(servicesData)} />
+      <JsonLdScript data={buildFaqJsonLd(seoFaqData, '/sluzby')} />
       <div className="container">
+        <Breadcrumbs items={breadcrumbs} />
         {/* Page Header */}
         <div className="section-header" style={{ marginBottom: '3.5rem' }}>
           <span className="section-tag">Technologický katalog</span>
@@ -86,14 +110,24 @@ export default function SluzbyPage() {
                       <span style={{ fontSize: '0.8rem', color: 'var(--accent-amber)', fontWeight: 700, textTransform: 'uppercase' }}>
                         OBOROVÁ SPECIALIZACE 0{index + 1}
                       </span>
-                      <h2 className={styles.cardTitle}>{service.title}</h2>
+                      <h2 className={styles.cardTitle}>
+                        <Link href={`/sluzby/${service.slug}`} style={{ color: 'inherit' }}>
+                          {service.title}
+                        </Link>
+                      </h2>
                     </div>
                   </div>
 
-                  <Link href={`/kontakt?sluzba=${encodeURIComponent(service.title)}`} className="btn btn-primary">
-                    <span>Poptat toto řešení</span>
-                    <ArrowRight size={15} />
-                  </Link>
+                  <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                    <Link href={`/sluzby/${service.slug}`} className="btn btn-secondary">
+                      <span>Detail technologie</span>
+                      <ArrowRight size={15} />
+                    </Link>
+                    <Link href={`/kontakt?sluzba=${encodeURIComponent(service.title)}`} className="btn btn-primary">
+                      <span>Poptat toto řešení</span>
+                      <ArrowRight size={15} />
+                    </Link>
+                  </div>
                 </div>
 
                 <p className={styles.cardDesc}>
@@ -182,7 +216,7 @@ export default function SluzbyPage() {
                       {relatedProjects.map((proj) => (
                         <Link 
                           key={proj.id} 
-                          href={`/referencie#${proj.id}`}
+                          href={`/referencie/${proj.id}`}
                           style={{ 
                             background: 'rgba(255, 255, 255, 0.03)', 
                             border: '1px solid var(--border-subtle)', 

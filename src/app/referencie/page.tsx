@@ -1,29 +1,50 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import ReferencesGallery from '@/components/ReferencesGallery';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import JsonLdScript from '@/components/JsonLdScript';
 import Link from 'next/link';
+import { referencesData } from '@/data/referencesData';
+import { buildBreadcrumbJsonLd, buildReferencesCollectionJsonLd } from '@/lib/jsonLd';
+import { buildPageMetadata, SK_SITE_URL } from '@/lib/seo';
 import styles from './referencie.module.css';
-import { ArrowRight, Building, Award, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Reference plochých střech, fasád a hydroizolací v ČR a SR',
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Reference plochých střech, fasád a hydroizolací',
   description:
-    'Prohlédněte si stavební reference NOVADACH v České republice a na Slovensku: Tunel Blanka Praha (tunelové izolace a hydroizolace proti tlakové vodě), Volkswagen, Eurovea 2, AS Nivy (zelené střechy), Volvo Cars Valaliky (montáž trapézových plechů a střešních plášťů), LP Kunice a OC Černý Most.',
-  alternates: {
-    canonical: 'https://www.novadach.cz/referencie',
-  },
-  openGraph: {
-    title: 'Reference v ČR a SR | Ploché střechy, sendvičové panely a hydroizolace | NOVADACH CZ',
-    description:
-      'Přes 250 úspěšně dokončených průmyslových hal, logistických center, dopravních tunelů a komerčních budov v ČR a SR.',
-    url: 'https://www.novadach.cz/referencie',
-  },
-};
+    'Stavební reference NOVADACH v ČR a SR: Tunel Blanka Praha, LP Kunice u Prahy, OC Černý Most, Volkswagen Bratislava, Eurovea 2, AS Nivy a Volvo Cars Valaliky.',
+  path: '/referencie',
+  skUrl: `${SK_SITE_URL}/referencie/`,
+  ogTitle: 'Reference v ČR a SR | Ploché střechy, panely a hydroizolace | NOVADACH CZ',
+  ogDescription:
+    'Přes 250 úspěšně dokončených průmyslových hal, logistických center, dopravních tunelů a komerčních budov v ČR a SR.',
+  imagePath: '/images/referencie/blanka_razba12-1.jpg',
+  imageAlt: 'Tunel Blanka Praha – realizace speciálních hydroizolací NOVADACH',
+  keywords: [
+    'reference plochých střech',
+    'Tunel Blanka hydroizolace',
+    'Logistický park Kunice',
+    'OC Černý Most Praha',
+    'Volkswagen Bratislava střechy',
+    'Volvo Cars Valaliky trapézové plechy',
+    'Eurovea 2 hydroizolace',
+    'AS Nivy zelená střecha',
+  ],
+});
+
+const breadcrumbs = [
+  { name: 'Úvod', path: '/' },
+  { name: 'Reference', path: '/referencie' },
+];
 
 export default function ReferenciePage() {
   return (
     <div className={styles.pageWrapper}>
+      <JsonLdScript data={buildBreadcrumbJsonLd(breadcrumbs)} />
+      <JsonLdScript data={buildReferencesCollectionJsonLd(referencesData)} />
       <div className="container">
+        <Breadcrumbs items={breadcrumbs} />
         {/* Header */}
         <div className="section-header" style={{ marginBottom: '3.5rem' }}>
           <span className="section-tag">Důkaz naší odbornosti</span>

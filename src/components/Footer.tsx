@@ -66,12 +66,12 @@ export default function Footer() {
             <div className={styles.col}>
               <h4 className={styles.colTitle}>Služby a technologie</h4>
               <ul className={styles.linkList}>
-                <li><Link href="/sluzby#stresne-plaste">Střešní pláště a ploché střechy</Link></li>
-                <li><Link href="/sluzby#fasady">Fasády a sendvičové opláštění</Link></li>
-                <li><Link href="/sluzby#izolacie">Hydroizolace a podzemní stavby</Link></li>
-                <li><Link href="/sluzby#fasadne-obklady">Architektonické obklady BOND</Link></li>
-                <li><Link href="/sluzby#ocelove-konstrukcie">Ocelové a pomocné konstrukce</Link></li>
-                <li><Link href="/sluzby#klampiarske-konstrukcie">Zakázková klempířská výroba</Link></li>
+                <li><Link href="/sluzby/stresne-plaste">Střešní pláště a ploché střechy</Link></li>
+                <li><Link href="/sluzby/fasady">Fasády a sendvičové panely</Link></li>
+                <li><Link href="/sluzby/izolacie">Hydroizolace a tunelové izolace</Link></li>
+                <li><Link href="/sluzby/fasadne-obklady">Architektonické obklady BOND</Link></li>
+                <li><Link href="/sluzby/ocelove-konstrukcie">Ocelové a tenkostěnné výměny</Link></li>
+                <li><Link href="/sluzby/klampiarske-konstrukcie">Zakázková klempířská výroba</Link></li>
               </ul>
             </div>
 
@@ -79,13 +79,13 @@ export default function Footer() {
             <div className={styles.col}>
               <h4 className={styles.colTitle}>Vybrané reference</h4>
               <ul className={styles.linkList}>
-                <li><Link href="/referencie#tunel-blanka">🇨🇿 Tunel Blanka, Praha</Link></li>
-                <li><Link href="/referencie#lp-kunice-praha">🇨🇿 LP Kunice u Prahy</Link></li>
-                <li><Link href="/referencie#oc-cerny-most-praha">🇨🇿 OC Černý Most Praha</Link></li>
-                <li><Link href="/referencie#volkswagen-bratislava">🇸🇰 VOLKSWAGEN Bratislava</Link></li>
-                <li><Link href="/referencie#eurovea-2">🇸🇰 EUROVEA 2 mrakodrap</Link></li>
-                <li><Link href="/referencie#as-nivy">🇸🇰 Nádraží & Zelená střecha Nivy</Link></li>
-                <li><Link href="/referencie#volvo-cars-valaliky">🇸🇰 Gigafactory Volvo Cars</Link></li>
+                <li><Link href="/referencie/tunel-blanka">🇨🇿 Tunel Blanka, Praha</Link></li>
+                <li><Link href="/referencie/lp-kunice-praha">🇨🇿 LP Kunice u Prahy</Link></li>
+                <li><Link href="/referencie/oc-cerny-most-praha">🇨🇿 OC Černý Most Praha</Link></li>
+                <li><Link href="/referencie/volkswagen-bratislava">🇸🇰 VOLKSWAGEN Bratislava</Link></li>
+                <li><Link href="/referencie/eurovea-2">🇸🇰 EUROVEA 2 mrakodrap</Link></li>
+                <li><Link href="/referencie/as-nivy">🇸🇰 Nádraží & Zelená střecha Nivy</Link></li>
+                <li><Link href="/referencie/volvo-cars-valaliky">🇸🇰 Gigafactory Volvo Cars</Link></li>
               </ul>
             </div>
 

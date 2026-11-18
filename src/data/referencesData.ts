@@ -7,6 +7,7 @@ export interface ReferenceProject {
   year: string;
   category: 'Průmysl & Logistika' | 'Obchod & Retail' | 'Dopravní & Inženýrské stavby' | 'Rezidence & Administrativa';
   image: string;
+  gallery?: string[];
   badge?: string;
   featured?: boolean;
   services: string[];
@@ -50,6 +51,11 @@ export const referencesData: ReferenceProject[] = [
     year: '2022 – 2023',
     category: 'Průmysl & Logistika',
     image: '/images/referencie/VW-H1_1.jpg',
+    gallery: [
+      '/images/referencie/VW-H1_1.jpg',
+      '/images/referencie/VW-H1_2.jpg',
+      '/images/referencie/VW-H1_3.jpg',
+    ],
     badge: 'Automobilový gigant',
     featured: true,
     services: [
@@ -72,6 +78,11 @@ export const referencesData: ReferenceProject[] = [
     year: '2021 – 2023',
     category: 'Rezidence & Administrativa',
     image: '/images/referencie/Eurovea-1.jpg',
+    gallery: [
+      '/images/referencie/Eurovea-1.jpg',
+      '/images/referencie/Eurovea-2.jpg',
+      '/images/referencie/Eurovea-3.jpg',
+    ],
     badge: 'Ikonický mrakodrap',
     featured: true,
     services: [
@@ -94,6 +105,10 @@ export const referencesData: ReferenceProject[] = [
     year: '2020 – 2023',
     category: 'Dopravní & Inženýrské stavby',
     image: '/images/referencie/AS-NIVY_3.jpg',
+    gallery: [
+      '/images/referencie/AS-NIVY_3.jpg',
+      '/images/referencie/AS-NIVY-_2.jpg',
+    ],
     badge: 'Megaprojekt dopravy',
     featured: true,
     services: [
@@ -223,6 +238,10 @@ export const referencesData: ReferenceProject[] = [
     year: '2018 – 2021',
     category: 'Rezidence & Administrativa',
     image: '/images/referencie/BTC-Pradiaren-Bratislava-2019-2021.jpg',
+    gallery: [
+      '/images/referencie/BTC-Pradiaren-Bratislava-2019-2021.jpg',
+      '/images/referencie/BCT-PRADIAREN_1.jpg',
+    ],
     badge: 'Oceněná architektura',
     featured: true,
     services: [
@@ -244,6 +263,10 @@ export const referencesData: ReferenceProject[] = [
     year: '2022 – 2023',
     category: 'Rezidence & Administrativa',
     image: '/images/referencie/THE-MILL_2.jpg',
+    gallery: [
+      '/images/referencie/THE-MILL_2.jpg',
+      '/images/referencie/THE-MILL_1.jpg',
+    ],
     badge: 'Moderní administrativa',
     featured: false,
     services: [
@@ -286,6 +309,10 @@ export const referencesData: ReferenceProject[] = [
     year: '2015 – 2016',
     category: 'Průmysl & Logistika',
     image: '/images/referencie/UNIPHARMA-Bojnice-2015-2016.jpg',
+    gallery: [
+      '/images/referencie/UNIPHARMA-Bojnice-2015-2016.jpg',
+      '/images/referencie/UNIPHARMA-Bojnice-2.jpg',
+    ],
     badge: 'Farmacie & Přísné klima',
     featured: false,
     services: [
@@ -320,3 +347,11 @@ export const referencesData: ReferenceProject[] = [
     }
   }
 ];
+
+export function getReferenceById(id: string): ReferenceProject | undefined {
+  return referencesData.find((project) => project.id === id);
+}
+
+export function getReferenceImages(project: ReferenceProject): string[] {
+  return Array.from(new Set([project.image, ...(project.gallery ?? [])]));
+}
